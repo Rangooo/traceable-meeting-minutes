@@ -1,54 +1,67 @@
 # Meeting Minutes Skill
 
-一个面向通用 AI Agent 的会议纪要技能，可将会议、访谈、电话会和 earnings call 的音频或转写稿整理成结构化纪要。核心工作流写在标准 Markdown `SKILL.md` 中，不依赖特定模型或厂商；`agents/openai.yaml` 只是可选的 OpenAI/Codex 界面适配元数据。
+[![skills.sh](https://skills.sh/b/Rangooo/meeting-minutes-skill)](https://skills.sh/Rangooo/meeting-minutes-skill)
 
-它重点解决三类常见问题：
+A general-purpose Agent Skill for turning meetings, interviews, research calls, and earnings calls into accurate, actionable, and traceable minutes.
 
-- 从冗长对话中识别核心议题，而不是按时间顺序机械摘抄
-- 为关键数字标注主体、时期、单位及 reported/organic 等口径
-- 在需要时按说法类型选择原始记录、参与者、内部系统、官方资料、专业数据库、研究文献、可靠媒体或用户反馈等渠道进行交叉验证
+Unlike a fixed meeting template, this skill selects between:
 
-## 安装
+- **Operational mode** for short internal meetings: decisions, action owners, due dates, acceptance criteria, blockers, parking-lot items, and follow-up.
+- **Analytical mode** for long interviews and earnings calls: themes, evidence locations, numerical scope, disagreements, management claims, and optional cross-validation.
+- **Hybrid mode** when both execution tracking and evidence-heavy analysis matter.
 
-将 `meeting-minutes` 文件夹复制到你的 AI Agent 所使用的 skills 目录，并按该 Agent 的说明刷新技能。核心入口为：
+The core workflow follows the open `SKILL.md` format and does not depend on a specific model vendor. `agents/openai.yaml` is optional interface metadata for compatible OpenAI/Codex clients.
 
-```text
-meeting-minutes/SKILL.md
+## Install
+
+Install with the open `skills` CLI:
+
+```bash
+npx skills add Rangooo/meeting-minutes-skill --skill meeting-minutes
 ```
 
-例如，在兼容 OpenAI/Codex skills 目录约定的环境中，可复制到 `~/.codex/skills/meeting-minutes/`。其他 Agent 只需加载 `SKILL.md`；无法识别 `agents/openai.yaml` 时可安全忽略。
+Or clone/copy this repository into the skills directory used by your Agent. The entry point is the root [`SKILL.md`](SKILL.md).
 
-## 使用示例
+## Use
 
 ```text
-使用 $meeting-minutes 整理这份 earnings call 转写稿。
-请按主题整理，逐项标注所有财务数字的口径，并用公司官方材料核查关键数据。
+Use $meeting-minutes to turn this 45-minute design review into concise minutes.
+Capture explicit decisions and action items, but do not infer owners or deadlines.
 ```
 
 ```text
-把这个会议录音整理成中文纪要，重点提取决策、负责人和截止时间；没有明确负责人的行动项不要猜。
+Use $meeting-minutes to structure this earnings-call transcript.
+Organize by theme, distinguish actual results from guidance and run rate,
+annotate numerical scope, and cross-validate material claims with suitable sources.
 ```
 
-支持的常见输入包括 `.mp3`、`.m4a`、`.wav`、`.flac`、`.docx`、`.txt`、`.md` 和包含转写文件的 `.zip`。音频转写依赖当前 Agent 环境中可用的本地工具或用户已授权的服务；技能本身不捆绑语音模型。
+```text
+使用 $meeting-minutes 整理这份会议录音。提取决策、行动项、负责人和截止时间；
+原文没有明确的信息不要猜测。
+```
 
-## 输出内容
+Common inputs include `.mp3`, `.m4a`, `.wav`, `.flac`, `.docx`, `.txt`, `.md`, and `.zip`. Audio transcription depends on a local tool or a service explicitly authorized by the user; no speech model is bundled.
 
-默认输出包括：
+## What it adds
 
-- 全文摘要和关键结论
-- 按讨论逻辑组织的分主题纪要
-- 决策、行动项和待确认事项
-- 带口径说明及原文定位的数据表
-- 可选的内部与外部多渠道交叉验证
-- 信息可信度评估
+- Evidence locations for material conclusions, decisions, actions, and numbers
+- Explicit separation of facts, opinions, forecasts, and inference
+- Numerical-scope checks such as GAAP/non-GAAP, reported/organic, YoY/QoQ, and actual/guidance/run rate
+- Action-item acceptance criteria without fabricating owners or deadlines
+- Claim-specific cross-validation using original records, participants, internal systems, official sources, research, databases, media, or customer evidence
+- Privacy boundaries for external transcription, search, communication, and publishing
 
-## 隐私与限制
+## 中文说明
 
-- 使用未公开会议材料前，请确认有权处理和保存相关内容。
-- 未经明确授权，不应把内部录音或转写上传给外部转写、搜索或分析服务。
-- 自动转写可能造成说话人、数字和专有名词错误，重要结论应回查原始材料。
-- 外部验证只能说明公开资料之间的支持、冲突或不可比关系，不能证明内部陈述必然真实。
+这是一个面向通用 AI Agent 的会议纪要技能，适用于内部短会、访谈、专家电话会及 earnings call。它不仅整理摘要和行动项，还会保留原文定位、检查数字口径，并在用户要求时根据说法类型选择合适渠道交叉验证。
+
+## Privacy and limitations
+
+- Confirm that you have the right to process and retain non-public meeting material.
+- Do not upload internal recordings or transcripts to external services without explicit authorization.
+- Automated transcription may misidentify speakers, numbers, and proper nouns; material conclusions should be checked against the source.
+- Cross-validation can establish support, conflict, or non-comparability between evidence; it cannot guarantee that an internal claim is true.
 
 ## License
 
-MIT License，详见 [`LICENSE`](LICENSE)。
+MIT License. See [`LICENSE`](LICENSE).

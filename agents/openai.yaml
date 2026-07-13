@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meeting Minutes"
+  short_description: "Create traceable meeting minutes with actions, numerical scope, and validation"
+  default_prompt: "Use $meeting-minutes to turn this meeting material into accurate, actionable, and traceable minutes."
