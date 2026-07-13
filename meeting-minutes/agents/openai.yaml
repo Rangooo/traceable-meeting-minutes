@@ -1,0 +1,4 @@
+interface:
+  display_name: "会议纪要整理"
+  short_description: "将会议、访谈或电话会整理为可追溯且口径清晰的结构化纪要"
+  default_prompt: "使用 $meeting-minutes 整理这份会议材料，并标注关键数字口径与原文位置。"
