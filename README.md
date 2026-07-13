@@ -43,7 +43,7 @@ claude plugin marketplace add anthropics/claude-plugins-community
 claude plugin install traceable-meeting-minutes@claude-community
 ```
 
-The Claude wrapper points to the same root `SKILL.md`; the workflow remains vendor-neutral and has no Claude-only instructions.
+The Claude entry point delegates to the same root `SKILL.md`; the workflow remains vendor-neutral and has no duplicated Claude-only rule set.
 
 ## Use
 
