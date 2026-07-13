@@ -22,6 +22,29 @@ npx skills add Rangooo/traceable-meeting-minutes --skill traceable-meeting-minut
 
 Or clone/copy this repository into the skills directory used by your Agent. The entry point is the root [`SKILL.md`](SKILL.md).
 
+### Claude Code plugin
+
+This repository also includes a native Claude Code plugin manifest. To test the plugin directly from a local clone:
+
+```bash
+claude --plugin-dir .
+```
+
+Validate the plugin before publishing changes:
+
+```bash
+claude plugin validate .
+```
+
+After acceptance into Anthropic's community directory, install it from the community marketplace:
+
+```bash
+claude plugin marketplace add anthropics/claude-plugins-community
+claude plugin install traceable-meeting-minutes@claude-community
+```
+
+The Claude wrapper points to the same root `SKILL.md`; the workflow remains vendor-neutral and has no Claude-only instructions.
+
 ## Use
 
 ```text
