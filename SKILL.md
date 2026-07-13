@@ -1,5 +1,5 @@
 ---
-name: meeting-minutes
+name: traceable-meeting-minutes
 description: Turn meetings, interviews, calls, and earnings-call recordings or transcripts into accurate, actionable, and traceable minutes. Use for short internal meetings, design reviews, standups, long interviews, research calls, earnings calls, “meeting minutes”, “整理纪要”, “整理访谈”, “会议纪要”, or when decisions, action items, numerical scope, evidence links, or cross-validation are required. Supports audio (mp3, m4a, wav, flac), documents (docx, txt, md), and zip archives.
 ---
 

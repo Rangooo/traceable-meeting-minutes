@@ -1,6 +1,6 @@
-# Meeting Minutes Skill
+# Traceable Meeting Minutes
 
-[![skills.sh](https://skills.sh/b/Rangooo/meeting-minutes-skill)](https://skills.sh/Rangooo/meeting-minutes-skill)
+[![skills.sh](https://skills.sh/b/Rangooo/traceable-meeting-minutes)](https://skills.sh/Rangooo/traceable-meeting-minutes)
 
 A general-purpose Agent Skill for turning meetings, interviews, research calls, and earnings calls into accurate, actionable, and traceable minutes.
 
@@ -17,7 +17,7 @@ The core workflow follows the open `SKILL.md` format and does not depend on a sp
 Install with the open `skills` CLI:
 
 ```bash
-npx skills add Rangooo/meeting-minutes-skill --skill meeting-minutes
+npx skills add Rangooo/traceable-meeting-minutes --skill traceable-meeting-minutes
 ```
 
 Or clone/copy this repository into the skills directory used by your Agent. The entry point is the root [`SKILL.md`](SKILL.md).
@@ -25,18 +25,18 @@ Or clone/copy this repository into the skills directory used by your Agent. The 
 ## Use
 
 ```text
-Use $meeting-minutes to turn this 45-minute design review into concise minutes.
+Use $traceable-meeting-minutes to turn this 45-minute design review into concise minutes.
 Capture explicit decisions and action items, but do not infer owners or deadlines.
 ```
 
 ```text
-Use $meeting-minutes to structure this earnings-call transcript.
+Use $traceable-meeting-minutes to structure this earnings-call transcript.
 Organize by theme, distinguish actual results from guidance and run rate,
 annotate numerical scope, and cross-validate material claims with suitable sources.
 ```
 
 ```text
-使用 $meeting-minutes 整理这份会议录音。提取决策、行动项、负责人和截止时间；
+使用 $traceable-meeting-minutes 整理这份会议录音。提取决策、行动项、负责人和截止时间；
 原文没有明确的信息不要猜测。
 ```
 
