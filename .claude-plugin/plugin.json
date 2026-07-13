@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "traceable-meeting-minutes",
+  "displayName": "Traceable Meeting Minutes",
+  "version": "1.0.0",
+  "description": "Turn meetings, interviews, calls, and earnings-call recordings or transcripts into accurate, actionable, and traceable minutes.",
+  "author": {
+    "name": "Rangooo",
+    "url": "https://github.com/Rangooo"
+  },
+  "homepage": "https://github.com/Rangooo/traceable-meeting-minutes",
+  "repository": "https://github.com/Rangooo/traceable-meeting-minutes",
+  "license": "MIT",
+  "keywords": [
+    "meeting-minutes",
+    "earnings-calls",
+    "interviews",
+    "traceability",
+    "cross-validation"
+  ],
+  "skills": "./"
+}
